@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoxBeTestA.Api", "FoxBeTestA.Api\FoxBeTestA.Api.csproj", "{C2197F9D-9C1B-45FE-AD94-F61FF4AEC931}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoxBeTestA.Api", "FoxBeTestA.Api\FoxBeTestA.Api.csproj", "{C2197F9D-9C1B-45FE-AD94-F61FF4AEC931}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoxBeTestA.DAL", "FoxBeTestA.DAL\FoxBeTestA.DAL.csproj", "{61F60B37-1242-46F3-B387-2DA6B889EFAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C2197F9D-9C1B-45FE-AD94-F61FF4AEC931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2197F9D-9C1B-45FE-AD94-F61FF4AEC931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2197F9D-9C1B-45FE-AD94-F61FF4AEC931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61F60B37-1242-46F3-B387-2DA6B889EFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61F60B37-1242-46F3-B387-2DA6B889EFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61F60B37-1242-46F3-B387-2DA6B889EFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61F60B37-1242-46F3-B387-2DA6B889EFAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

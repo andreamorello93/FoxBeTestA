@@ -1,7 +1,4 @@
-﻿
-using FoxBeTestA.DAL.Data;
-using Microsoft.EntityFrameworkCore;
-
+﻿using FoxBeTestA.DAL.Data;
 
 public static class RegisterStartupServices
 {
@@ -12,9 +9,9 @@ public static class RegisterStartupServices
         builder.Services.AddSwaggerGen();
 
         builder.Services.AddDbContext<FoxBeTestAContext>(options =>
-        {
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-        });
+            options.UseSqlServer(
+                Configuration.GetConnectionString("DefaultConnection"),
+                b => b.MigrationsAssembly(typeof(FoxBeTestAContext).Assembly.FullName)));
 
         return builder;
     }
