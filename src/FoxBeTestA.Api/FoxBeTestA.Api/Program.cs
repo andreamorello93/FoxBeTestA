@@ -13,3 +13,5 @@ if (application.Environment.IsDevelopment())
 }
 
 application.SetupMiddlewares().Run();
+
+public partial class Program { }
