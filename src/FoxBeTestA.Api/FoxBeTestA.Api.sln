@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoxBeTestA.Api", "FoxBeTest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoxBeTestA.DAL", "FoxBeTestA.DAL\FoxBeTestA.DAL.csproj", "{61F60B37-1242-46F3-B387-2DA6B889EFAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoxBeTestA.Application", "FoxBeTestA.Application\FoxBeTestA.Application.csproj", "{5AB60D4F-15CB-4DEE-9B09-5B0188BBDAFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{61F60B37-1242-46F3-B387-2DA6B889EFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61F60B37-1242-46F3-B387-2DA6B889EFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61F60B37-1242-46F3-B387-2DA6B889EFAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB60D4F-15CB-4DEE-9B09-5B0188BBDAFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB60D4F-15CB-4DEE-9B09-5B0188BBDAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB60D4F-15CB-4DEE-9B09-5B0188BBDAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB60D4F-15CB-4DEE-9B09-5B0188BBDAFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

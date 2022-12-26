@@ -10,15 +10,9 @@ namespace FoxBeTestA.DAL.Data
         public DbSet<RoomType> RoomTypes { get; set; }
         public DbSet<PriceList> PriceList { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public FoxBeTestAContext(DbContextOptions<FoxBeTestAContext> options)
+            : base(options)
         {
-            base.OnConfiguring(optionsBuilder);
-
-            var configuration = new ConfigurationBuilder()
-                .AddUserSecrets<FoxBeTestAContext>()
-                .Build();
-
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
         }
     }
 }
