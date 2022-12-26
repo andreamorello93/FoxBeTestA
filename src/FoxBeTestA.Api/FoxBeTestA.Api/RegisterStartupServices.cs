@@ -28,12 +28,12 @@ public static class RegisterStartupServices
 
         AddAutoMapper(builder);
 
-        AddDbContenxt(builder);
+        AddDbContext(builder);
 
         return builder;
     }
 
-    private static void AddDbContenxt(WebApplicationBuilder builder)
+    private static void AddDbContext(WebApplicationBuilder builder)
     {
         builder.Services.AddDbContext<FoxBeTestAContext>(opts => 
             opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), 

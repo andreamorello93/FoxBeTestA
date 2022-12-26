@@ -8,6 +8,8 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["FoxBeTestA.Api/FoxBeTestA.Api.csproj", "FoxBeTestA.Api/"]
+COPY ["FoxBeTestA.DAL/FoxBeTestA.DAL.csproj", "FoxBeTestA.DAL/"]
+COPY ["FoxBeTestA.Application/FoxBeTestA.Application.csproj", "FoxBeTestA.Application/"]
 RUN dotnet restore "FoxBeTestA.Api/FoxBeTestA.Api.csproj"
 COPY . .
 WORKDIR "/src/FoxBeTestA.Api"

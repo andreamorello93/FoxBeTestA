@@ -7,8 +7,8 @@ if (application.Environment.IsDevelopment())
 {
     using (var scope = application.Services.CreateScope())
     {
-        var salesContext = scope.ServiceProvider.GetRequiredService<FoxBeTestAContext>();
-        salesContext.Database.EnsureCreated();
+        var foxBeTestAContext = scope.ServiceProvider.GetRequiredService<FoxBeTestAContext>();
+        foxBeTestAContext.Database.EnsureCreated();
     }
 }
 
