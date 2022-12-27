@@ -6,16 +6,29 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoxBeTestA.Application.DTOs;
 using FoxBeTestA.Application.Interfaces;
+using FoxBeTestA.Application.Repositories;
 using FoxBeTestA.DAL.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace FoxBeTestA.Application.Processors
 {
-    public class RoomTypeProcessor : GenericProcessor<RoomType, RoomTypeDto, int>
+    public interface IRoomTypeProcessor : IGenericProcessor<RoomType, RoomTypeDto, int>
     {
-       
-        public RoomTypeProcessor(IGenericRepository<RoomType, int> RoomTypeRepository, IMapper mapper) : base(RoomTypeRepository, mapper)
+        Task<RoomType> GetRoomTypeWithAccomodationById(int id);
+    }
+
+    public class RoomTypeProcessor : GenericProcessor<RoomType, RoomTypeDto, int>, IRoomTypeProcessor
+    {
+        private readonly IRoomTypeRepository _roomTypeRepository;
+
+        public RoomTypeProcessor(IRoomTypeRepository roomTypeRepository, IMapper mapper) : base(roomTypeRepository, mapper)
         {
+            _roomTypeRepository = roomTypeRepository;
+        }
+
+        public async Task<RoomType> GetRoomTypeWithAccomodationById(int id)
+        {
+            return await _roomTypeRepository.GetRoomTypeWithAccomodationById(id);
         }
     }
 }

@@ -92,40 +92,40 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "BaseRoomPrice"});
-                table11.AddRow(new string[] {
+                table31.AddRow(new string[] {
                             "Hotel 1",
                             "50"});
 #line 7
- testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table11, "Given ");
+ testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table31, "Given ");
 #line hidden
 #line 10
  testRunner.And("the POST Accomodation http request to \'api/accomodation\' for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
                             "AccomodationId",
                             "ExtraPercentageFromBasePrice"});
-                table12.AddRow(new string[] {
+                table32.AddRow(new string[] {
                             "Single",
                             "{AccomodationId}",
                             "0"});
-                table12.AddRow(new string[] {
+                table32.AddRow(new string[] {
                             "Double",
                             "{AccomodationId}",
                             "50"});
-                table12.AddRow(new string[] {
+                table32.AddRow(new string[] {
                             "Deluxe",
                             "{AccomodationId}",
                             "70"});
-                table12.AddRow(new string[] {
+                table32.AddRow(new string[] {
                             "Suite",
                             "{AccomodationId}",
                             "100"});
 #line 11
- testRunner.And("the Room Type entities", ((string)(null)), table12, "And ");
+ testRunner.And("the Room Type entities", ((string)(null)), table32, "And ");
 #line hidden
 #line 17
  testRunner.And("the POST http request to \'api/roomtype\' for all entities for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -136,28 +136,28 @@ this.ScenarioInitialize(scenarioInfo);
 #line 19
  testRunner.Then("I should recieve 4 json nodes for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
                             "AccomodationId",
                             "ExtraPercentageFromBasePrice"});
-                table13.AddRow(new string[] {
+                table33.AddRow(new string[] {
                             "Single",
                             "{AccomodationId}",
                             "0"});
-                table13.AddRow(new string[] {
+                table33.AddRow(new string[] {
                             "Double",
                             "{AccomodationId}",
                             "50"});
-                table13.AddRow(new string[] {
+                table33.AddRow(new string[] {
                             "Deluxe",
                             "{AccomodationId}",
                             "70"});
-                table13.AddRow(new string[] {
+                table33.AddRow(new string[] {
                             "Suite",
                             "{AccomodationId}",
                             "100"});
 #line 20
- testRunner.And("response nodes should be equal to RoomType", ((string)(null)), table13, "And ");
+ testRunner.And("response nodes should be equal to RoomType", ((string)(null)), table33, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -182,28 +182,28 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "BaseRoomPrice"});
-                table14.AddRow(new string[] {
+                table34.AddRow(new string[] {
                             "Hotel 1",
                             "50"});
 #line 29
- testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table14, "Given ");
+ testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table34, "Given ");
 #line hidden
 #line 32
  testRunner.And("the POST Accomodation http request to \'api/accomodation\' for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
                             "AccomodationId",
                             "ExtraPercentageFromBasePrice"});
-                table15.AddRow(new string[] {
+                table35.AddRow(new string[] {
                             "Single",
                             "{AccomodationId}",
                             "0"});
 #line 33
- testRunner.And("the RoomType entity", ((string)(null)), table15, "And ");
+ testRunner.And("the RoomType entity", ((string)(null)), table35, "And ");
 #line hidden
 #line 36
  testRunner.And("the POST http request to \'api/roomtype\' for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -212,16 +212,16 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("perfom the GET http request to \'api/roomtype/{id}\' with the inserted id for RoomT" +
                         "ype", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
                             "AccomodationId",
                             "ExtraPercentageFromBasePrice"});
-                table16.AddRow(new string[] {
+                table36.AddRow(new string[] {
                             "Single",
                             "{AccomodationId}",
                             "0"});
 #line 38
- testRunner.Then("response node should be equal to RoomType", ((string)(null)), table16, "Then ");
+ testRunner.Then("response node should be equal to RoomType", ((string)(null)), table36, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -246,28 +246,28 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "BaseRoomPrice"});
-                table17.AddRow(new string[] {
+                table37.AddRow(new string[] {
                             "Hotel 1",
                             "50"});
 #line 44
-    testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table17, "Given ");
+    testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table37, "Given ");
 #line hidden
 #line 47
  testRunner.And("the POST Accomodation http request to \'api/accomodation\' for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
                             "AccomodationId",
                             "ExtraPercentageFromBasePrice"});
-                table18.AddRow(new string[] {
+                table38.AddRow(new string[] {
                             "Single",
                             "{AccomodationId}",
                             "0"});
 #line 48
- testRunner.And("the RoomType entity", ((string)(null)), table18, "And ");
+ testRunner.And("the RoomType entity", ((string)(null)), table38, "And ");
 #line hidden
 #line 51
  testRunner.And("the POST http request to \'api/roomtype\' for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -278,16 +278,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 53
  testRunner.Then("I should recieve 1 json nodes for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
                             "AccomodationId",
                             "ExtraPercentageFromBasePrice"});
-                table19.AddRow(new string[] {
+                table39.AddRow(new string[] {
                             "Single",
                             "{AccomodationId}",
                             "0"});
 #line 54
- testRunner.And("response nodes should be equal to RoomType", ((string)(null)), table19, "And ");
+ testRunner.And("response nodes should be equal to RoomType", ((string)(null)), table39, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -312,43 +312,43 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "BaseRoomPrice"});
-                table20.AddRow(new string[] {
+                table40.AddRow(new string[] {
                             "Hotel 1",
                             "50"});
 #line 60
- testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table20, "Given ");
+ testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table40, "Given ");
 #line hidden
 #line 63
  testRunner.And("the POST Accomodation http request to \'api/accomodation\' for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
                             "AccomodationId",
                             "ExtraPercentageFromBasePrice"});
-                table21.AddRow(new string[] {
+                table41.AddRow(new string[] {
                             "Single",
                             "{AccomodationId}",
                             "0"});
 #line 64
- testRunner.And("the RoomType entity", ((string)(null)), table21, "And ");
+ testRunner.And("the RoomType entity", ((string)(null)), table41, "And ");
 #line hidden
 #line 67
  testRunner.And("the POST http request to \'api/roomtype\' for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
                             "AccomodationId",
                             "ExtraPercentageFromBasePrice"});
-                table22.AddRow(new string[] {
+                table42.AddRow(new string[] {
                             "NewDescription",
                             "{AccomodationId}",
                             "20"});
 #line 68
  testRunner.And("the PUT http request to \'api/roomtype/{id}\' with the inserted id and the new enti" +
-                        "ty RoomType", ((string)(null)), table22, "And ");
+                        "ty RoomType", ((string)(null)), table42, "And ");
 #line hidden
 #line 71
  testRunner.When("perfom the GET http request to \'api/roomtype\' for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -356,16 +356,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 72
  testRunner.Then("I should recieve 1 json nodes for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
                             "AccomodationId",
                             "ExtraPercentageFromBasePrice"});
-                table23.AddRow(new string[] {
+                table43.AddRow(new string[] {
                             "NewDescription",
                             "{AccomodationId}",
                             "20"});
 #line 73
- testRunner.And("response nodes should be equal to RoomType", ((string)(null)), table23, "And ");
+ testRunner.And("response nodes should be equal to RoomType", ((string)(null)), table43, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -390,26 +390,26 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "BaseRoomPrice"});
-                table24.AddRow(new string[] {
+                table44.AddRow(new string[] {
                             "Hotel 1",
                             "50"});
 #line 79
- testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table24, "Given ");
+ testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table44, "Given ");
 #line hidden
 #line 82
  testRunner.And("the POST Accomodation http request to \'api/accomodation\' for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
                             "AccomodationId"});
-                table25.AddRow(new string[] {
+                table45.AddRow(new string[] {
                             "Single",
                             "{AccomodationId}"});
 #line 83
- testRunner.And("the RoomType entity", ((string)(null)), table25, "And ");
+ testRunner.And("the RoomType entity", ((string)(null)), table45, "And ");
 #line hidden
 #line 86
  testRunner.And("the POST http request to \'api/roomtype\' for RoomType", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

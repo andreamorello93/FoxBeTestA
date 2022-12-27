@@ -17,7 +17,7 @@ namespace FoxBeTestA.Application.Features.PriceListFeatures.Queries
             }
             public async Task<PriceListDto> Handle(GetPriceListByIdQuery query, CancellationToken cancellationToken)
             {
-                return await _PriceListProcessor.ExecuteGetById(query.Id);
+                return await _PriceListProcessor.ExecuteGetByIdToDto(query.Id);
             }
         }
     }

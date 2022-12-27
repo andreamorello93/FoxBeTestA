@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoxBeTestA.Application.DTOs;
 using FoxBeTestA.Application.Interfaces;
+using FoxBeTestA.Application.Processors;
 using FoxBeTestA.DAL.Models;
 using MediatR;
 
@@ -20,10 +21,10 @@ namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Commands
 
         public class UpdateRoomTypeCommandHandler : IRequestHandler<UpdateRoomTypeCommand, RoomTypeDto>
         {
-            private readonly IGenericProcessor<RoomType, RoomTypeDto, int> _roomTypeProcessor;
+            private readonly IRoomTypeProcessor _roomTypeProcessor;
             private readonly IMapper _mapper;
 
-            public UpdateRoomTypeCommandHandler(IGenericProcessor<RoomType, RoomTypeDto, int> roomTypeProcessor, IMapper mapper)
+            public UpdateRoomTypeCommandHandler(IRoomTypeProcessor roomTypeProcessor, IMapper mapper)
             {
                 _roomTypeProcessor = roomTypeProcessor;
                 _mapper = mapper;
@@ -31,7 +32,7 @@ namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Commands
             public async Task<RoomTypeDto> Handle(UpdateRoomTypeCommand command, CancellationToken cancellationToken)
             {
                 var RoomType = _mapper.Map<RoomType>(command);
-                return await _roomTypeProcessor.ExecuteUpdate(RoomType.Id, RoomType);
+                return await _roomTypeProcessor.ExecuteUpdateToDto(RoomType.Id, RoomType);
             }
         }
     }

@@ -82,7 +82,7 @@ namespace FoxBeTestA.Integration.Tests
         {
             _roomTypeEntity = _stepDefinitionHelper.ToJToken<RoomType>(table, false, new Dictionary<string, object>() { { "{AccomodationId}", _insertedaccomodationId } });
             _stepDefinitionHelper.RemoveJTokenValues(_stepDefinitionHelper.ApiResponse, "[*].id");
-            _stepDefinitionHelper.ApiResponse.Should().BeEquivalentTo(_roomTypeEntity);
+            _stepDefinitionHelper.ApiResponse.ToString().Should().Be(_roomTypeEntity.ToString());
         }
 
         [Given(@"the RoomType entity")]
@@ -102,14 +102,9 @@ namespace FoxBeTestA.Integration.Tests
         {
             _roomTypeEntity = _stepDefinitionHelper.ToJToken<RoomType>(table, true, new Dictionary<string, object>() { { "{AccomodationId}", _insertedaccomodationId } });
             _stepDefinitionHelper.RemoveJTokenValues(_stepDefinitionHelper.ApiResponse, "id");
-            _stepDefinitionHelper.ApiResponse.Should().BeEquivalentTo(_roomTypeEntity);
+            _stepDefinitionHelper.ApiResponse.ToString().Should().Be(_roomTypeEntity.ToString());
         }
 
-        [Given(@"the PUT http request to '([^']*)' with the inserted id and the new entity")]
-        public void GivenThePUTHttpRequestToWithTheInsertedIdAndTheNewEntity(string p0, Table table)
-        {
-            throw new PendingStepException();
-        }
 
         [Given(@"the DELETE http request to '([^']*)' for RoomType")]
         public async Task GivenTheDELETEHttpRequestToForRoomType(string p0)

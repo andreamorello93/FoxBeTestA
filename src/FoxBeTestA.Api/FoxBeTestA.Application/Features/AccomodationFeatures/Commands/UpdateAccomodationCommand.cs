@@ -29,7 +29,7 @@ namespace FoxBeTestA.Application.Features.AccomodationFeatures.Commands
             public async Task<AccomodationDto> Handle(UpdateAccomodationCommand command, CancellationToken cancellationToken)
             {
                 var accomodation = _mapper.Map<Accomodation>(command);
-                return await _accomodationProcessor.ExecuteUpdate(accomodation.Id, accomodation);
+                return await _accomodationProcessor.ExecuteUpdateToDto(accomodation.Id, accomodation);
             }
         }
     }

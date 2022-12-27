@@ -12,8 +12,8 @@ namespace FoxBeTestA.Application.Repositories
 {
     public class GenericRepository<TModel, TKey> : IGenericRepository<TModel, TKey> where TModel : class
     {
-        private FoxBeTestAContext _context;
-        private DbSet<TModel> _table;
+        protected FoxBeTestAContext _context;
+        protected DbSet<TModel> _table;
 
         public GenericRepository(FoxBeTestAContext context)
         {

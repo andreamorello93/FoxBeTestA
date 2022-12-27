@@ -17,7 +17,7 @@ namespace FoxBeTestA.Application.Features.AccomodationFeatures.Queries
             }
             public async Task<IEnumerable<AccomodationDto>> Handle(GetAllAccomodationsQuery query, CancellationToken cancellationToken)
             {
-                return await _accomodationProcessor.ExecuteGetAll();
+                return await _accomodationProcessor.ExecuteGetAllToDto();
             }
         }
     }

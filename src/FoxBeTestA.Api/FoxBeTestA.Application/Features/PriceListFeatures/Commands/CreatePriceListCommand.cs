@@ -23,7 +23,7 @@ namespace FoxBeTestA.Application.Features.PriceListFeatures.Commands
             }
             public async Task<int> Handle(CreatePriceListCommand command, CancellationToken cancellationToken)
             {
-                var entity= await _PriceListProcessor.ExecuteInsert(_mapper.Map<PriceList>(command));
+                var entity= await _PriceListProcessor.ExecuteInsertToDto(_mapper.Map<PriceList>(command));
 
                 return entity.Id;
             }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FoxBeTestA.Application.Interfaces;
+using FoxBeTestA.Application.Processors;
 using FoxBeTestA.DAL.Models;
 using MediatR;
 
@@ -13,10 +14,10 @@ namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Commands
 
         public class CreateRoomTypeCommandHandler : IRequestHandler<CreateRoomTypeCommand, int>
         {
-            private readonly IGenericProcessor<RoomType, RoomTypeDto, int> _roomTypeProcessor;
+            private readonly IRoomTypeProcessor _roomTypeProcessor;
             private readonly IMapper _mapper;
 
-            public CreateRoomTypeCommandHandler(IGenericProcessor<RoomType, RoomTypeDto, int> roomTypeProcessor, IMapper mapper)
+            public CreateRoomTypeCommandHandler(IRoomTypeProcessor roomTypeProcessor, IMapper mapper)
             {
                 _roomTypeProcessor = roomTypeProcessor;
                 _mapper = mapper;

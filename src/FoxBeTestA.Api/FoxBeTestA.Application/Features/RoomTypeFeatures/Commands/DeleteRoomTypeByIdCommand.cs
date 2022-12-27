@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FoxBeTestA.Application.DTOs;
 using FoxBeTestA.Application.Interfaces;
+using FoxBeTestA.Application.Processors;
 using FoxBeTestA.DAL.Models;
 using MediatR;
 
@@ -15,9 +16,9 @@ namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Commands
         public int Id { get; set; }
         public class DeleteRoomTypeByIdCommandHandler : IRequestHandler<DeleteRoomTypeByIdCommand, bool>
         {
-            private readonly IGenericProcessor<RoomType, RoomTypeDto, int> _roomTypeProcessor;
+            private readonly IRoomTypeProcessor _roomTypeProcessor;
 
-            public DeleteRoomTypeByIdCommandHandler(IGenericProcessor<RoomType, RoomTypeDto, int> roomTypeProcessor)
+            public DeleteRoomTypeByIdCommandHandler(IRoomTypeProcessor roomTypeProcessor)
             {
                 _roomTypeProcessor = roomTypeProcessor;
             }

@@ -18,7 +18,7 @@ namespace FoxBeTestA.Application.Features.AccomodationFeatures.Queries
             }
             public async Task<AccomodationDto> Handle(GetAccomodationByIdQuery query, CancellationToken cancellationToken)
             {
-                return await _accomodationProcessor.ExecuteGetById(query.Id);
+                return await _accomodationProcessor.ExecuteGetByIdToDto(query.Id);
             }
         }
     }

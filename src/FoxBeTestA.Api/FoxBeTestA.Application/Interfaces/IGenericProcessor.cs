@@ -8,11 +8,14 @@ namespace FoxBeTestA.Application.Interfaces
 {
     public interface IGenericProcessor<TModel, TDto, TKey>
     {
-        public Task<IEnumerable<TDto>> ExecuteGetAll();
-        public Task<TDto> ExecuteGetById(TKey id);
-
-        public Task<TDto> ExecuteInsert(TModel entity);
-        public Task<TDto> ExecuteUpdate(TKey id, TModel entityDto);
+        public Task<IEnumerable<TModel>> ExecuteGetAll();
+        public Task<IEnumerable<TDto>> ExecuteGetAllToDto();
+        public Task<TModel> ExecuteGetById(TKey id);
+        public Task<TDto> ExecuteGetByIdToDto(TKey id);
+        public Task<TModel> ExecuteInsert(TModel entity);
+        public Task<TDto> ExecuteInsertToDto(TModel entity);
+        public Task<TModel> ExecuteUpdate(TKey id, TModel entityDto);
+        public Task<TDto> ExecuteUpdateToDto(TKey id, TModel entityDto);
         public Task<bool> ExecuteDelete(TKey id);
     }
 }

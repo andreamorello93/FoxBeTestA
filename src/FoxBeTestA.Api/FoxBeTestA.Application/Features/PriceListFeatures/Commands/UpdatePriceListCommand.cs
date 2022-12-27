@@ -15,6 +15,7 @@ namespace FoxBeTestA.Application.Features.PriceListFeatures.Commands
     {
         public int Id { get; set; }
         public int RoomTypeId { get; set; }
+        public DateTime Date { get; set; }
         public decimal Price { get; set; }
 
         public class UpdatePriceListCommandHandler : IRequestHandler<UpdatePriceListCommand, PriceListDto>
@@ -30,7 +31,7 @@ namespace FoxBeTestA.Application.Features.PriceListFeatures.Commands
             public async Task<PriceListDto> Handle(UpdatePriceListCommand command, CancellationToken cancellationToken)
             {
                 var PriceList = _mapper.Map<PriceList>(command);
-                return await _PriceListProcessor.ExecuteUpdate(PriceList.Id, PriceList);
+                return await _PriceListProcessor.ExecuteUpdateToDto(PriceList.Id, PriceList);
             }
         }
     }

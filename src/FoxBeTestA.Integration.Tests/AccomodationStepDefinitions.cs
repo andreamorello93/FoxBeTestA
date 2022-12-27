@@ -1,6 +1,7 @@
 using System;
 using System.Net.Mime;
 using System.Text;
+using FluentAssertions;
 using FluentAssertions.Json;
 using FoxBeTestA.Application.DTOs;
 using FoxBeTestA.Application.Features.AccomodationFeatures.Commands;
@@ -71,7 +72,7 @@ namespace FoxBeTestA.Integration.Tests
         {
             _entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, false);
             _stepDefinitionHelper.RemoveJTokenValues(_stepDefinitionHelper.ApiResponse, "[*].id");
-            _stepDefinitionHelper.ApiResponse.Should().BeEquivalentTo(_entity);
+            _stepDefinitionHelper.ApiResponse.ToString().Should().Be(_entity.ToString());
         }
 
         [Given(@"the DELETE http request to '([^']*)' for Accomodation")]
@@ -104,7 +105,7 @@ namespace FoxBeTestA.Integration.Tests
         {
             _entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, true);
             _stepDefinitionHelper.RemoveJTokenValues(_stepDefinitionHelper.ApiResponse, "id");
-            _stepDefinitionHelper.ApiResponse.Should().BeEquivalentTo(_entity);
+            _stepDefinitionHelper.ApiResponse.ToString().Should().Be(_entity.ToString());
         }
 
     }
