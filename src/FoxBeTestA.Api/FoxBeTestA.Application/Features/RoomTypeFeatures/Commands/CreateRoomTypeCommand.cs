@@ -15,9 +15,10 @@ namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Commands
             private readonly IGenericProcessor<RoomType, RoomType, int> _roomTypeProcessor;
             private readonly IMapper _mapper;
 
-            public CreateRoomTypeCommandHandler(IGenericProcessor<RoomType, RoomType, int> roomTypeProcessor)
+            public CreateRoomTypeCommandHandler(IGenericProcessor<RoomType, RoomType, int> roomTypeProcessor, IMapper mapper)
             {
                 _roomTypeProcessor = roomTypeProcessor;
+                _mapper = mapper;
             }
             public async Task<int> Handle(CreateRoomTypeCommand command, CancellationToken cancellationToken)
             {
