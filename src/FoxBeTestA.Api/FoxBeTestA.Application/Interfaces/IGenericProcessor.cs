@@ -11,8 +11,8 @@ namespace FoxBeTestA.Application.Interfaces
         public Task<IEnumerable<TDto>> ExecuteGetAll();
         public Task<TDto> ExecuteGetById(TKey id);
 
-        public Task<TModel> ExecuteInsert(TModel entity);
-        public Task<TModel> ExecuteUpdate(TKey id, TModel entityDto);
+        public Task<TDto> ExecuteInsert(TModel entity);
+        public Task<TDto> ExecuteUpdate(TKey id, TModel entityDto);
         public Task<bool> ExecuteDelete(TKey id);
     }
 }

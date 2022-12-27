@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FoxBeTestA.Application.DTOs;
 using FoxBeTestA.Application.Features.AccomodationFeatures.Commands;
+using FoxBeTestA.Application.Features.PriceListFeatures.Commands;
 using FoxBeTestA.Application.Features.RoomTypeFeatures.Commands;
 using FoxBeTestA.DAL.Models;
 
@@ -17,11 +18,16 @@ namespace FoxBeTestA.Application.Automapper
         {
             CreateMap<Accomodation, AccomodationDto>();
             CreateMap<RoomType, RoomTypeDto>();
+            CreateMap<PriceList, PriceListDto>();
 
             CreateMap<UpdateAccomodationCommand, Accomodation>();
             CreateMap<CreateAccomodationCommand, Accomodation>();
+
             CreateMap<CreateRoomTypeCommand, RoomType>();
             CreateMap<UpdateRoomTypeCommand, RoomType>();
+
+            CreateMap<CreatePriceListCommand, PriceList>();
+            CreateMap<UpdatePriceListCommand, PriceList>();
         }
     }
 }

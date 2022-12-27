@@ -30,19 +30,19 @@ namespace FoxBeTestA.Application.Processors
             return _mapper.Map<TDto>(await _genericRepository.GetById(id));
         }
 
-        public async Task<TModel> ExecuteInsert(TModel entity)
+        public virtual async Task<TDto> ExecuteInsert(TModel entity)
         {
-            await _genericRepository.Insert(entity);
-            return entity;
+            var entityDto = _mapper.Map<TDto>(await _genericRepository.Insert(entity));
+            return entityDto;
         }
 
-        public async Task<TModel> ExecuteUpdate(TKey id, TModel entity)
+        public virtual async Task<TDto> ExecuteUpdate(TKey id, TModel entity)
         {
-            await _genericRepository.Update(entity);
-            return entity;
+            var entityDto = _mapper.Map<TDto>(await _genericRepository.Update(entity));
+            return entityDto;
         }
 
-        public async Task<bool> ExecuteDelete(TKey id)
+        public virtual async Task<bool> ExecuteDelete(TKey id)
         {
             await _genericRepository.Delete(id);
             return true;

@@ -9,6 +9,7 @@ namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Commands
     {
         public string Description { get; set; }
         public int AccomodationId { get; set; }
+        public int ExtraPercentageFromBasePrice { get; set; }
 
         public class CreateRoomTypeCommandHandler : IRequestHandler<CreateRoomTypeCommand, int>
         {
@@ -22,8 +23,7 @@ namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Commands
             }
             public async Task<int> Handle(CreateRoomTypeCommand command, CancellationToken cancellationToken)
             {
-                var roomType = _mapper.Map<RoomType>(command);
-                var entity= await _roomTypeProcessor.ExecuteInsert(roomType);
+                var entity= await _roomTypeProcessor.ExecuteInsert(_mapper.Map<RoomType>(command));
 
                 return entity.Id;
             }

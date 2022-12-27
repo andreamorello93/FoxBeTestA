@@ -11,13 +11,14 @@ using MediatR;
 
 namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Commands
 {
-    public class UpdateRoomTypeCommand : IRequest<RoomType>
+    public class UpdateRoomTypeCommand : IRequest<RoomTypeDto>
     {
         public int Id { get; set; }
         public string Description { get; set; }
         public int AccomodationId { get; set; }
+        public int ExtraPercentageFromBasePrice { get; set; }
 
-        public class UpdateRoomTypeCommandHandler : IRequestHandler<UpdateRoomTypeCommand, RoomType>
+        public class UpdateRoomTypeCommandHandler : IRequestHandler<UpdateRoomTypeCommand, RoomTypeDto>
         {
             private readonly IGenericProcessor<RoomType, RoomTypeDto, int> _roomTypeProcessor;
             private readonly IMapper _mapper;
@@ -27,7 +28,7 @@ namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Commands
                 _roomTypeProcessor = roomTypeProcessor;
                 _mapper = mapper;
             }
-            public async Task<RoomType> Handle(UpdateRoomTypeCommand command, CancellationToken cancellationToken)
+            public async Task<RoomTypeDto> Handle(UpdateRoomTypeCommand command, CancellationToken cancellationToken)
             {
                 var RoomType = _mapper.Map<RoomType>(command);
                 return await _roomTypeProcessor.ExecuteUpdate(RoomType.Id, RoomType);

@@ -10,5 +10,6 @@ namespace FoxBeTestA.Application.DTOs
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public decimal BaseRoomPrice { get; set; }
     }
 }

@@ -93,9 +93,11 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
                 TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name"});
+                            "Name",
+                            "BaseRoomPrice"});
                 table11.AddRow(new string[] {
-                            "Hotel 1"});
+                            "Hotel 1",
+                            "50"});
 #line 7
  testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table11, "Given ");
 #line hidden
@@ -104,19 +106,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
                 TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
-                            "AccomodationId"});
+                            "AccomodationId",
+                            "ExtraPercentageFromBasePrice"});
                 table12.AddRow(new string[] {
                             "Single",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "0"});
                 table12.AddRow(new string[] {
                             "Double",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "50"});
                 table12.AddRow(new string[] {
                             "Deluxe",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "70"});
                 table12.AddRow(new string[] {
                             "Suite",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "100"});
 #line 11
  testRunner.And("the Room Type entities", ((string)(null)), table12, "And ");
 #line hidden
@@ -131,19 +138,24 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
                 TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
-                            "AccomodationId"});
+                            "AccomodationId",
+                            "ExtraPercentageFromBasePrice"});
                 table13.AddRow(new string[] {
                             "Single",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "0"});
                 table13.AddRow(new string[] {
                             "Double",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "50"});
                 table13.AddRow(new string[] {
                             "Deluxe",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "70"});
                 table13.AddRow(new string[] {
                             "Suite",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "100"});
 #line 20
  testRunner.And("response nodes should be equal to RoomType", ((string)(null)), table13, "And ");
 #line hidden
@@ -171,9 +183,11 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
                 TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name"});
+                            "Name",
+                            "BaseRoomPrice"});
                 table14.AddRow(new string[] {
-                            "Hotel 1"});
+                            "Hotel 1",
+                            "50"});
 #line 29
  testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table14, "Given ");
 #line hidden
@@ -182,10 +196,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
                 TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
-                            "AccomodationId"});
+                            "AccomodationId",
+                            "ExtraPercentageFromBasePrice"});
                 table15.AddRow(new string[] {
                             "Single",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "0"});
 #line 33
  testRunner.And("the RoomType entity", ((string)(null)), table15, "And ");
 #line hidden
@@ -198,10 +214,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
                 TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
-                            "AccomodationId"});
+                            "AccomodationId",
+                            "ExtraPercentageFromBasePrice"});
                 table16.AddRow(new string[] {
                             "Single",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "0"});
 #line 38
  testRunner.Then("response node should be equal to RoomType", ((string)(null)), table16, "Then ");
 #line hidden
@@ -229,9 +247,11 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
                 TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name"});
+                            "Name",
+                            "BaseRoomPrice"});
                 table17.AddRow(new string[] {
-                            "Hotel 1"});
+                            "Hotel 1",
+                            "50"});
 #line 44
     testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table17, "Given ");
 #line hidden
@@ -240,10 +260,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
                 TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
-                            "AccomodationId"});
+                            "AccomodationId",
+                            "ExtraPercentageFromBasePrice"});
                 table18.AddRow(new string[] {
                             "Single",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "0"});
 #line 48
  testRunner.And("the RoomType entity", ((string)(null)), table18, "And ");
 #line hidden
@@ -258,10 +280,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
                 TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
-                            "AccomodationId"});
+                            "AccomodationId",
+                            "ExtraPercentageFromBasePrice"});
                 table19.AddRow(new string[] {
                             "Single",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "0"});
 #line 54
  testRunner.And("response nodes should be equal to RoomType", ((string)(null)), table19, "And ");
 #line hidden
@@ -289,9 +313,11 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
                 TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name"});
+                            "Name",
+                            "BaseRoomPrice"});
                 table20.AddRow(new string[] {
-                            "Hotel 1"});
+                            "Hotel 1",
+                            "50"});
 #line 60
  testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table20, "Given ");
 #line hidden
@@ -300,10 +326,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
                 TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
-                            "AccomodationId"});
+                            "AccomodationId",
+                            "ExtraPercentageFromBasePrice"});
                 table21.AddRow(new string[] {
                             "Single",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "0"});
 #line 64
  testRunner.And("the RoomType entity", ((string)(null)), table21, "And ");
 #line hidden
@@ -312,10 +340,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
                 TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
-                            "AccomodationId"});
+                            "AccomodationId",
+                            "ExtraPercentageFromBasePrice"});
                 table22.AddRow(new string[] {
                             "NewDescription",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "20"});
 #line 68
  testRunner.And("the PUT http request to \'api/roomtype/{id}\' with the inserted id and the new enti" +
                         "ty RoomType", ((string)(null)), table22, "And ");
@@ -328,10 +358,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
                 TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                             "Description",
-                            "AccomodationId"});
+                            "AccomodationId",
+                            "ExtraPercentageFromBasePrice"});
                 table23.AddRow(new string[] {
                             "NewDescription",
-                            "{AccomodationId}"});
+                            "{AccomodationId}",
+                            "20"});
 #line 73
  testRunner.And("response nodes should be equal to RoomType", ((string)(null)), table23, "And ");
 #line hidden
@@ -359,9 +391,11 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
                 TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name"});
+                            "Name",
+                            "BaseRoomPrice"});
                 table24.AddRow(new string[] {
-                            "Hotel 1"});
+                            "Hotel 1",
+                            "50"});
 #line 79
  testRunner.Given("the Accomodation entity for RoomType", ((string)(null)), table24, "Given ");
 #line hidden

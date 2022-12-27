@@ -8,13 +8,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoxBeTestA.DAL.Models
 {
-    public class Accomodation
+    public class PriceListDto
     {
         public int Id { get; set; }
-        [StringLength(255)]
-        [Unicode(false)]
-        public string Name { get; set; }
-        public decimal BaseRoomPrice { get; set; }
-        public ICollection<RoomType> RoomTypes { get; set; }
+        public DateTime Date { get; set; }
+        public int RoomTypeId { get; set; }
+        public decimal Price { get; set; }
     }
 }

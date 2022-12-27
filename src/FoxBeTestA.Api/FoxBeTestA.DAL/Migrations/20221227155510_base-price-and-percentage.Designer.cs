@@ -4,6 +4,7 @@ using FoxBeTestA.DAL.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoxBeTestA.DAL.Migrations
 {
     [DbContext(typeof(FoxBeTestAContext))]
-    partial class FoxBeTestAContextModelSnapshot : ModelSnapshot
+    [Migration("20221227155510_base-price-and-percentage")]
+    partial class basepriceandpercentage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

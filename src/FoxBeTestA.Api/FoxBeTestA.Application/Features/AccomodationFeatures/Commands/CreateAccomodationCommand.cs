@@ -14,6 +14,7 @@ namespace FoxBeTestA.Application.Features.AccomodationFeatures.Commands
     public class CreateAccomodationCommand : IRequest<int>
     {
         public string Name { get; set; }
+        public decimal BaseRoomPrice { get; set; }
 
         public class CreateAccomodationCommandHandler : IRequestHandler<CreateAccomodationCommand, int>
         {
@@ -27,8 +28,7 @@ namespace FoxBeTestA.Application.Features.AccomodationFeatures.Commands
             }
             public async Task<int> Handle(CreateAccomodationCommand command, CancellationToken cancellationToken)
             {
-                var accomodation = _mapper.Map<Accomodation>(command);
-                var entity= await _accomodationProcessor.ExecuteInsert(accomodation);
+                var entity= await _accomodationProcessor.ExecuteInsert(_mapper.Map<Accomodation>(command));
 
                 return entity.Id;
             }

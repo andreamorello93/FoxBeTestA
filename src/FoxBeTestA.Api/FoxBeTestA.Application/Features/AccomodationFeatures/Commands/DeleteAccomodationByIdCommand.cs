@@ -13,6 +13,7 @@ namespace FoxBeTestA.Application.Features.AccomodationFeatures.Commands
     public class DeleteAccomodationByIdCommand : IRequest<bool>
     {
         public int Id { get; set; }
+        
         public class DeleteAccomodationByIdCommandHandler : IRequestHandler<DeleteAccomodationByIdCommand, bool>
         {
             private readonly IGenericProcessor<Accomodation, AccomodationDto, int> _accomodationProcessor;

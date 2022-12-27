@@ -11,11 +11,12 @@ using MediatR;
 
 namespace FoxBeTestA.Application.Features.AccomodationFeatures.Commands
 {
-    public class UpdateAccomodationCommand : IRequest<Accomodation>
+    public class UpdateAccomodationCommand : IRequest<AccomodationDto>
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public class UpdateAccomodationCommandHandler : IRequestHandler<UpdateAccomodationCommand, Accomodation>
+        public decimal BaseRoomPrice { get; set; }
+        public class UpdateAccomodationCommandHandler : IRequestHandler<UpdateAccomodationCommand, AccomodationDto>
         {
             private readonly IGenericProcessor<Accomodation, AccomodationDto, int> _accomodationProcessor;
             private readonly IMapper _mapper;
@@ -25,7 +26,7 @@ namespace FoxBeTestA.Application.Features.AccomodationFeatures.Commands
                 _accomodationProcessor = accomodationProcessor;
                 _mapper = mapper;
             }
-            public async Task<Accomodation> Handle(UpdateAccomodationCommand command, CancellationToken cancellationToken)
+            public async Task<AccomodationDto> Handle(UpdateAccomodationCommand command, CancellationToken cancellationToken)
             {
                 var accomodation = _mapper.Map<Accomodation>(command);
                 return await _accomodationProcessor.ExecuteUpdate(accomodation.Id, accomodation);

@@ -13,5 +13,6 @@ namespace FoxBeTestA.DAL.Models
         public int Id { get; set; }
         public string Description { get; set; }
         public int AccomodationId { get; set; }
+        public int ExtraPercentageFromBasePrice { get; set; }
     }
 }
