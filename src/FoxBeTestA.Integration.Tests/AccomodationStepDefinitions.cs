@@ -58,7 +58,7 @@ namespace FoxBeTestA.Integration.Tests
             _stepDefinitionHelper.CountApiResponseDtos(p0);
         }
 
-        [Given(@"the PUT http request to '([^']*)' with the new entity")]
+        [Given(@"the PUT http request to '([^']*)' with the inserted id and the new entity")]
         public async Task GivenThePUTHttpRequestToWithTheNewEntity(string p0, Table table)
         {
             _entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, true);
@@ -66,7 +66,7 @@ namespace FoxBeTestA.Integration.Tests
             await _stepDefinitionHelper.SendPutRequest(_foxBeTestAApiHelper.Client, p0.Replace("{id}", _insertedId.ToString()), new StringContent(_entity.ToString(), Encoding.UTF8, MediaTypeNames.Application.Json));
         }
 
-        [Then(@"json node should be equal to")]
+        [Then(@"response nodes should be equal to")]
         public void ThenFirstJsonNodeShouldBeEqualTo(Table table)
         {
             _entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, false);
@@ -91,6 +91,20 @@ namespace FoxBeTestA.Integration.Tests
         {
             foreach (var entity in _entity)
                 await _stepDefinitionHelper.SendPostRequest(_foxBeTestAApiHelper.Client, p0, new StringContent(entity.ToString(), Encoding.UTF8, MediaTypeNames.Application.Json));
+        }
+
+        [When(@"perfom the GET http request to '([^']*)' with the inserted id")]
+        public async Task WhenPerfomTheGETHttpRequestToWithTheInsertedId(string p0)
+        {
+            await _stepDefinitionHelper.SendGetRequest(_foxBeTestAApiHelper.Client, p0.Replace("{id}", _insertedId.ToString()));
+        }
+
+        [Then(@"response node should be equal to")]
+        public void ThenResponseNodeShouldBeEqualTo(Table table)
+        {
+            _entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, true);
+            _stepDefinitionHelper.RemoveJTokenValues(_stepDefinitionHelper.ApiResponse, "id");
+            _stepDefinitionHelper.ApiResponse.Should().BeEquivalentTo(_entity);
         }
 
     }
