@@ -16,6 +16,7 @@ namespace FoxBeTestA.Application.Automapper
         public MappingProfile()
         {
             CreateMap<Accomodation, AccomodationDto>();
+            CreateMap<RoomType, RoomTypeDto>();
 
             CreateMap<UpdateAccomodationCommand, Accomodation>();
             CreateMap<CreateAccomodationCommand, Accomodation>();

@@ -15,12 +15,14 @@ namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Commands
     {
         public int Id { get; set; }
         public string Description { get; set; }
+        public int AccomodationId { get; set; }
+
         public class UpdateRoomTypeCommandHandler : IRequestHandler<UpdateRoomTypeCommand, RoomType>
         {
-            private readonly IGenericProcessor<RoomType, RoomType, int> _roomTypeProcessor;
+            private readonly IGenericProcessor<RoomType, RoomTypeDto, int> _roomTypeProcessor;
             private readonly IMapper _mapper;
 
-            public UpdateRoomTypeCommandHandler(IGenericProcessor<RoomType, RoomType, int> roomTypeProcessor, IMapper mapper)
+            public UpdateRoomTypeCommandHandler(IGenericProcessor<RoomType, RoomTypeDto, int> roomTypeProcessor, IMapper mapper)
             {
                 _roomTypeProcessor = roomTypeProcessor;
                 _mapper = mapper;

@@ -20,9 +20,10 @@ namespace FoxBeTestA.Application.Features.AccomodationFeatures.Commands
             private readonly IGenericProcessor<Accomodation, AccomodationDto, int> _accomodationProcessor;
             private readonly IMapper _mapper;
 
-            public CreateAccomodationCommandHandler(IGenericProcessor<Accomodation, AccomodationDto, int> accomodationProcessor)
+            public CreateAccomodationCommandHandler(IGenericProcessor<Accomodation, AccomodationDto, int> accomodationProcessor, IMapper mapper)
             {
                 _accomodationProcessor = accomodationProcessor;
+                _mapper = mapper;
             }
             public async Task<int> Handle(CreateAccomodationCommand command, CancellationToken cancellationToken)
             {

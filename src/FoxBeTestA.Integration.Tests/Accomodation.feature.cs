@@ -111,10 +111,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("the POST http request to \'api/accomodation\' for all entities", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
- testRunner.When("perfom the GET http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("perfom the GET http request to \'api/accomodation\' for Accomodation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
- testRunner.Then("I should recieve 5 json nodes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should recieve 5 json nodes for Accomodation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name"});
@@ -129,7 +129,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table2.AddRow(new string[] {
                             "Hotel 5"});
 #line 17
- testRunner.And("response nodes should be equal to", ((string)(null)), table2, "And ");
+ testRunner.And("response nodes should be equal to Accomodation", ((string)(null)), table2, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -162,7 +162,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("the Accomodation entity", ((string)(null)), table3, "Given ");
 #line hidden
 #line 30
- testRunner.And("the POST http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the POST http request to \'api/accomodation\' for Accomodation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 31
  testRunner.When("perfom the GET http request to \'api/accomodation/{id}\' with the inserted id", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -205,20 +205,20 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("the Accomodation entity", ((string)(null)), table5, "Given ");
 #line hidden
 #line 41
- testRunner.And("the POST http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the POST http request to \'api/accomodation\' for Accomodation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 42
- testRunner.When("perfom the GET http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("perfom the GET http request to \'api/accomodation\' for Accomodation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 43
- testRunner.Then("I should recieve 1 json nodes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should recieve 1 json nodes for Accomodation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name"});
                 table6.AddRow(new string[] {
                             "Hotel 1"});
 #line 44
- testRunner.And("response nodes should be equal to", ((string)(null)), table6, "And ");
+ testRunner.And("response nodes should be equal to Accomodation", ((string)(null)), table6, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -251,7 +251,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("the Accomodation entity", ((string)(null)), table7, "Given ");
 #line hidden
 #line 53
- testRunner.And("the POST http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the POST http request to \'api/accomodation\' for Accomodation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name"});
@@ -259,20 +259,20 @@ this.ScenarioInitialize(scenarioInfo);
                             "Hotel 5"});
 #line 54
  testRunner.And("the PUT http request to \'api/accomodation/{id}\' with the inserted id and the new " +
-                        "entity", ((string)(null)), table8, "And ");
+                        "entity Accomodation", ((string)(null)), table8, "And ");
 #line hidden
 #line 57
- testRunner.When("perfom the GET http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("perfom the GET http request to \'api/accomodation\' for Accomodation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 58
- testRunner.Then("I should recieve 1 json nodes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should recieve 1 json nodes for Accomodation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name"});
                 table9.AddRow(new string[] {
                             "Hotel 5"});
 #line 59
- testRunner.And("response nodes should be equal to", ((string)(null)), table9, "And ");
+ testRunner.And("response nodes should be equal to Accomodation", ((string)(null)), table9, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -305,16 +305,16 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("the Accomodation entity", ((string)(null)), table10, "Given ");
 #line hidden
 #line 68
- testRunner.And("the POST http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the POST http request to \'api/accomodation\' for Accomodation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 69
- testRunner.And("the DELETE http request to \'api/accomodation/{id}\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the DELETE http request to \'api/accomodation/{id}\' for Accomodation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 70
- testRunner.When("perfom the GET http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("perfom the GET http request to \'api/accomodation\' for Accomodation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 71
- testRunner.Then("I should recieve 0 json nodes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should recieve 0 json nodes for Accomodation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

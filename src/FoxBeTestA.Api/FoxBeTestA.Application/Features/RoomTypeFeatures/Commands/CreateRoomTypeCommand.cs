@@ -12,10 +12,10 @@ namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Commands
 
         public class CreateRoomTypeCommandHandler : IRequestHandler<CreateRoomTypeCommand, int>
         {
-            private readonly IGenericProcessor<RoomType, RoomType, int> _roomTypeProcessor;
+            private readonly IGenericProcessor<RoomType, RoomTypeDto, int> _roomTypeProcessor;
             private readonly IMapper _mapper;
 
-            public CreateRoomTypeCommandHandler(IGenericProcessor<RoomType, RoomType, int> roomTypeProcessor, IMapper mapper)
+            public CreateRoomTypeCommandHandler(IGenericProcessor<RoomType, RoomTypeDto, int> roomTypeProcessor, IMapper mapper)
             {
                 _roomTypeProcessor = roomTypeProcessor;
                 _mapper = mapper;

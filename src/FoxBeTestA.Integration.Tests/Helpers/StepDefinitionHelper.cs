@@ -87,6 +87,15 @@ namespace FoxBeTestA.Integration.Tests.Helpers
             return true;
         }
 
+        public bool ReplaceJTokenValue(JToken token, string propertyname, object propertyValue, string path = "")
+        {
+            RemoveJTokenValue(token, string.IsNullOrEmpty(path) ? $"{propertyname}" : $"{path}.{propertyname}");
+
+            AddJTokenValue(token, propertyname, propertyValue, path);
+
+            return true;
+        }
+
         public JToken? SelectToken(JToken parent, string path = "")
         {
             var token = parent.SelectToken(path);
@@ -175,7 +184,7 @@ namespace FoxBeTestA.Integration.Tests.Helpers
             return new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
         }
 
-        public JToken ToJToken<T>(Table table, bool isSingleRow)
+        public JToken ToJToken<T>(Table table, bool isSingleRow, Dictionary<string, object> replaceValues = null)
         {
             var items = new List<string>();
 
@@ -187,7 +196,13 @@ namespace FoxBeTestA.Integration.Tests.Helpers
                 foreach (var row in rows)
                 {
                     var property = typeof(T).GetProperty(row.Key);
-                    properties.Add($"\"{ToLowerFirstChar(row.Key)}\": {AddDoubleQuotesIfTypeNeedThem(property.PropertyType, row.Value)}");
+                    var value = row.Value;
+
+                    if(replaceValues != null)
+                        if(replaceValues.ContainsKey($"{{{row.Key}}}"))
+                            value = replaceValues[$"{{{row.Key}}}"].ToString();
+
+                    properties.Add($"\"{ToLowerFirstChar(row.Key)}\": {AddDoubleQuotesIfTypeNeedThem(property.PropertyType, value)}");
                 }
 
                 items.Add($"{{{string.Join(",", properties)}}}");

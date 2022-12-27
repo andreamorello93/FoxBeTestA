@@ -4,17 +4,17 @@ using MediatR;
 
 namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Queries
 {
-    public class GetAllRoomTypesQuery : IRequest<IEnumerable<RoomType>>
+    public class GetAllRoomTypesQuery : IRequest<IEnumerable<RoomTypeDto>>
     {
-        public class GetAllRoomTypesQueryHandler : IRequestHandler<GetAllRoomTypesQuery, IEnumerable<RoomType>>
+        public class GetAllRoomTypesQueryHandler : IRequestHandler<GetAllRoomTypesQuery, IEnumerable<RoomTypeDto>>
         {
-            private readonly IGenericProcessor<RoomType, RoomType, int> _RoomTypeProcessor;
+            private readonly IGenericProcessor<RoomType, RoomTypeDto, int> _RoomTypeProcessor;
 
-            public GetAllRoomTypesQueryHandler(IGenericProcessor<RoomType, RoomType, int> RoomTypeProcessor)
+            public GetAllRoomTypesQueryHandler(IGenericProcessor<RoomType, RoomTypeDto, int> RoomTypeProcessor)
             {
                 _RoomTypeProcessor = RoomTypeProcessor;
             }
-            public async Task<IEnumerable<RoomType>> Handle(GetAllRoomTypesQuery query, CancellationToken cancellationToken)
+            public async Task<IEnumerable<RoomTypeDto>> Handle(GetAllRoomTypesQuery query, CancellationToken cancellationToken)
             {
                 return await _RoomTypeProcessor.ExecuteGetAll();
             }

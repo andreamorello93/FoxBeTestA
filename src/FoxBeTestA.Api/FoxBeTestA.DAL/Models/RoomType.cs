@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoxBeTestA.DAL.Models
 {
+    [Index(nameof(Description), nameof(AccomodationId), IsUnique = true, Name = "IX_DescriptionAndAccomodationId_Unique")]
     public class RoomType
     {
         public int Id { get; set; }

@@ -15,9 +15,9 @@ namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Commands
         public int Id { get; set; }
         public class DeleteRoomTypeByIdCommandHandler : IRequestHandler<DeleteRoomTypeByIdCommand, bool>
         {
-            private readonly IGenericProcessor<RoomType, RoomType, int> _roomTypeProcessor;
+            private readonly IGenericProcessor<RoomType, RoomTypeDto, int> _roomTypeProcessor;
 
-            public DeleteRoomTypeByIdCommandHandler(IGenericProcessor<RoomType, RoomType, int> roomTypeProcessor)
+            public DeleteRoomTypeByIdCommandHandler(IGenericProcessor<RoomType, RoomTypeDto, int> roomTypeProcessor)
             {
                 _roomTypeProcessor = roomTypeProcessor;
             }

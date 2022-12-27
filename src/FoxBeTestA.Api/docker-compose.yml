@@ -9,7 +9,7 @@ services:
     environment:
         - ASPNETCORE_ENVIRONMENT=Development
         - ConnectionStrings__DefaultConnection=Initial Catalog=FoxBeTestAApi;Data Source=sqldb;Persist Security Info=True;User ID=SA;Password=2Secure*Password2
-
+   
   sqldb:
     image: mcr.microsoft.com/mssql/server:2022-latest
     environment:

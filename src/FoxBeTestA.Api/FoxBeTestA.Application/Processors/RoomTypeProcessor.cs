@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace FoxBeTestA.Application.Processors
 {
-    public class RoomTypeProcessor : GenericProcessor<RoomType, RoomType, int>
+    public class RoomTypeProcessor : GenericProcessor<RoomType, RoomTypeDto, int>
     {
        
         public RoomTypeProcessor(IGenericRepository<RoomType, int> RoomTypeRepository, IMapper mapper) : base(RoomTypeRepository, mapper)

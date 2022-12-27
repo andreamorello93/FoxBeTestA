@@ -39,26 +39,26 @@ namespace FoxBeTestA.Integration.Tests
             _entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, true);
         }
 
-        [Given(@"the POST http request to '([^']*)'")]
+        [Given(@"the POST http request to '([^']*)' for Accomodation")]
         public async Task GivenThePOSTHttpRequestTo(string p0)
         {
             await _stepDefinitionHelper.SendPostRequest(_foxBeTestAApiHelper.Client, p0, new StringContent(_entity.ToString(), Encoding.UTF8, MediaTypeNames.Application.Json));
             _insertedId = (int)_stepDefinitionHelper.ApiResponse;
         }
 
-        [When(@"perfom the GET http request to '([^']*)'")]
+        [When(@"perfom the GET http request to '([^']*)' for Accomodation")]
         public async Task WhenPerfomTheGETHttpRequestTo(string p0)
         {
             await _stepDefinitionHelper.SendGetRequest(_foxBeTestAApiHelper.Client, p0);
         }
 
-        [Then(@"I should recieve (.*) json nodes")]
+        [Then(@"I should recieve (.*) json nodes for Accomodation")]
         public void ThenIShoulRecieveJsonNodes(int p0)
         {
             _stepDefinitionHelper.CountApiResponseDtos(p0);
         }
 
-        [Given(@"the PUT http request to '([^']*)' with the inserted id and the new entity")]
+        [Given(@"the PUT http request to '([^']*)' with the inserted id and the new entity Accomodation")]
         public async Task GivenThePUTHttpRequestToWithTheNewEntity(string p0, Table table)
         {
             _entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, true);
@@ -66,7 +66,7 @@ namespace FoxBeTestA.Integration.Tests
             await _stepDefinitionHelper.SendPutRequest(_foxBeTestAApiHelper.Client, p0.Replace("{id}", _insertedId.ToString()), new StringContent(_entity.ToString(), Encoding.UTF8, MediaTypeNames.Application.Json));
         }
 
-        [Then(@"response nodes should be equal to")]
+        [Then(@"response nodes should be equal to Accomodation")]
         public void ThenFirstJsonNodeShouldBeEqualTo(Table table)
         {
             _entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, false);
@@ -74,7 +74,7 @@ namespace FoxBeTestA.Integration.Tests
             _stepDefinitionHelper.ApiResponse.Should().BeEquivalentTo(_entity);
         }
 
-        [Given(@"the DELETE http request to '([^']*)'")]
+        [Given(@"the DELETE http request to '([^']*)' for Accomodation")]
         public async Task GivenTheDELETEHttpRequestTo(string p0)
         {
             await _stepDefinitionHelper.SendDeleteRequest(_foxBeTestAApiHelper.Client, p0.Replace("{id}", _insertedId.ToString()));
