@@ -74,5 +74,24 @@ namespace FoxBeTestA.Integration.Tests
             _stepDefinitionHelper.ApiResponse.Should().BeEquivalentTo(_entity);
         }
 
+        [Given(@"the DELETE http request to '([^']*)'")]
+        public async Task GivenTheDELETEHttpRequestTo(string p0)
+        {
+            await _stepDefinitionHelper.SendDeleteRequest(_foxBeTestAApiHelper.Client, p0.Replace("{id}", _insertedId.ToString()));
+        }
+
+        [Given(@"the Accomodation entities")]
+        public void GivenTheAccomodationEntities(Table table)
+        {
+            _entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, false);
+        }
+
+        [Given(@"the POST http request to '([^']*)' for all entities")]
+        public async Task GivenThePOSTHttpRequestToForAllEntities(string p0)
+        {
+            foreach (var entity in _entity)
+                await _stepDefinitionHelper.SendPostRequest(_foxBeTestAApiHelper.Client, p0, new StringContent(entity.ToString(), Encoding.UTF8, MediaTypeNames.Application.Json));
+        }
+
     }
 }

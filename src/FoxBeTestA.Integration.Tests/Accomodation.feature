@@ -3,6 +3,19 @@
 CRUD Operations for accomodation entity
 
 @Accomodation
+Scenario: Get All Accomodation
+	Given the Accomodation entities
+	| Name    |
+	| Hotel 1 |
+	| Hotel 2 |
+	| Hotel 3 |
+	| Hotel 4 |
+	| Hotel 5 |
+	And the POST http request to 'api/accomodation' for all entities
+	When perfom the GET http request to 'api/accomodation'
+	Then I should recieve 5 json nodes	
+
+@Accomodation
 Scenario: Insert Accomodation
 	Given the Accomodation entity
 	| Name    |
@@ -25,3 +38,13 @@ Scenario: Update Accomodation
 	And first json node should be equal to
 	| Name    |
 	| Hotel 5 |
+
+@Accomodation
+Scenario: Delete Accomodation
+	Given the Accomodation entity
+	| Name    |
+	| Hotel 1 |
+	And the POST http request to 'api/accomodation'	
+	And the DELETE http request to 'api/accomodation/{id}'
+	When perfom the GET http request to 'api/accomodation'
+	Then I should recieve 0 json nodes		

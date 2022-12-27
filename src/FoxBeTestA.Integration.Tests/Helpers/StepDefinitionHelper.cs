@@ -29,6 +29,11 @@ namespace FoxBeTestA.Integration.Tests.Helpers
             ApiResponse = JToken.Parse(await Post(client, url, content));
         }
 
+        public async Task SendDeleteRequest(HttpClient client, string url)
+        {
+            ApiResponse = JToken.Parse(await Delete(client, url));
+        }
+
         public async Task SendPutRequest(HttpClient client, string url, HttpContent content)
         {
             ApiResponse = JToken.Parse(await Put(client, url, content));
@@ -78,6 +83,13 @@ namespace FoxBeTestA.Integration.Tests.Helpers
             if (token is not JContainer) return null;
 
             return token;
+        }
+
+        private async Task<string> Delete(HttpClient client, string url)
+        {
+            var message = await client.DeleteAsync(url);
+
+            return await ValidateAndReturnApiResponse(message);
         }
 
         private async Task<string> Post(HttpClient client, string url, HttpContent content)
