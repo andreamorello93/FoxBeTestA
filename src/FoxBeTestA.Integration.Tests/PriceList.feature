@@ -110,3 +110,43 @@ Scenario: Delete Price List
 	And the DELETE http request to 'api/pricelist/{id}' for PriceList
 	When perfom the GET http request to 'api/pricelist' for PriceList
 	Then I should recieve 0 json nodes for PriceList
+
+@PriceList
+Scenario: Insert Price List With 85% plus on base price 20
+    Given the Accomodation entity for PriceList
+	| Name    | BaseRoomPrice |
+	| Hotel 1 | 20            |
+	And the POST Accomodation http request to 'api/accomodation' for PriceList
+	And the RoomType entity for PriceList
+	| Description | AccomodationId   | ExtraPercentageFromBasePrice |
+	| Single      | {AccomodationId} | 85                           |
+	And the POST http request Room Type to 'api/roomtype' for PriceList
+	And And the PriceList entity
+	| Date			 | RoomTypeId			| Price |
+	| 2022-12-27     | {RoomTypeId}         | 0     |
+	And the POST http request to 'api/pricelist' for PriceList
+	When perfom the GET http request to 'api/pricelist' for PriceList
+	Then I should recieve 1 json nodes for PriceList
+	And response nodes should be equal to PriceList
+	| Date			       	  | RoomTypeId			  | Price    |
+	| 2022-12-27T00:00:00     | {RoomTypeId1}         | 37.0     |
+
+@PriceList
+Scenario: Insert Price List With 85% plus on base price 20 but price inserted. no calculations nedded
+    Given the Accomodation entity for PriceList
+	| Name    | BaseRoomPrice |
+	| Hotel 1 | 20            |
+	And the POST Accomodation http request to 'api/accomodation' for PriceList
+	And the RoomType entity for PriceList
+	| Description | AccomodationId   | ExtraPercentageFromBasePrice |
+	| Single      | {AccomodationId} | 85                           |
+	And the POST http request Room Type to 'api/roomtype' for PriceList
+	And And the PriceList entity
+	| Date			 | RoomTypeId			| Price  |
+	| 2022-12-27     | {RoomTypeId}         | 10     |
+	And the POST http request to 'api/pricelist' for PriceList
+	When perfom the GET http request to 'api/pricelist' for PriceList
+	Then I should recieve 1 json nodes for PriceList
+	And response nodes should be equal to PriceList
+	| Date			       	  | RoomTypeId			  | Price    |
+	| 2022-12-27T00:00:00     | {RoomTypeId1}         | 10.0     |

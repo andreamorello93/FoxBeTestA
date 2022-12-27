@@ -511,6 +511,168 @@ this.ScenarioInitialize(scenarioInfo);
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Insert Price List With 85% plus on base price 20")]
+        [NUnit.Framework.CategoryAttribute("PriceList")]
+        public void InsertPriceListWith85PlusOnBasePrice20()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "PriceList"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Insert Price List With 85% plus on base price 20", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 115
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "BaseRoomPrice"});
+                table31.AddRow(new string[] {
+                            "Hotel 1",
+                            "20"});
+#line 116
+    testRunner.Given("the Accomodation entity for PriceList", ((string)(null)), table31, "Given ");
+#line hidden
+#line 119
+ testRunner.And("the POST Accomodation http request to \'api/accomodation\' for PriceList", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Description",
+                            "AccomodationId",
+                            "ExtraPercentageFromBasePrice"});
+                table32.AddRow(new string[] {
+                            "Single",
+                            "{AccomodationId}",
+                            "85"});
+#line 120
+ testRunner.And("the RoomType entity for PriceList", ((string)(null)), table32, "And ");
+#line hidden
+#line 123
+ testRunner.And("the POST http request Room Type to \'api/roomtype\' for PriceList", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Date",
+                            "RoomTypeId",
+                            "Price"});
+                table33.AddRow(new string[] {
+                            "2022-12-27",
+                            "{RoomTypeId}",
+                            "0"});
+#line 124
+ testRunner.And("And the PriceList entity", ((string)(null)), table33, "And ");
+#line hidden
+#line 127
+ testRunner.And("the POST http request to \'api/pricelist\' for PriceList", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 128
+ testRunner.When("perfom the GET http request to \'api/pricelist\' for PriceList", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 129
+ testRunner.Then("I should recieve 1 json nodes for PriceList", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Date",
+                            "RoomTypeId",
+                            "Price"});
+                table34.AddRow(new string[] {
+                            "2022-12-27T00:00:00",
+                            "{RoomTypeId1}",
+                            "37.0"});
+#line 130
+ testRunner.And("response nodes should be equal to PriceList", ((string)(null)), table34, "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Insert Price List With 85% plus on base price 20 but price inserted. no calculati" +
+            "ons nedded")]
+        [NUnit.Framework.CategoryAttribute("PriceList")]
+        public void InsertPriceListWith85PlusOnBasePrice20ButPriceInserted_NoCalculationsNedded()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "PriceList"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Insert Price List With 85% plus on base price 20 but price inserted. no calculati" +
+                    "ons nedded", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 135
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "BaseRoomPrice"});
+                table35.AddRow(new string[] {
+                            "Hotel 1",
+                            "20"});
+#line 136
+    testRunner.Given("the Accomodation entity for PriceList", ((string)(null)), table35, "Given ");
+#line hidden
+#line 139
+ testRunner.And("the POST Accomodation http request to \'api/accomodation\' for PriceList", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Description",
+                            "AccomodationId",
+                            "ExtraPercentageFromBasePrice"});
+                table36.AddRow(new string[] {
+                            "Single",
+                            "{AccomodationId}",
+                            "85"});
+#line 140
+ testRunner.And("the RoomType entity for PriceList", ((string)(null)), table36, "And ");
+#line hidden
+#line 143
+ testRunner.And("the POST http request Room Type to \'api/roomtype\' for PriceList", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Date",
+                            "RoomTypeId",
+                            "Price"});
+                table37.AddRow(new string[] {
+                            "2022-12-27",
+                            "{RoomTypeId}",
+                            "10"});
+#line 144
+ testRunner.And("And the PriceList entity", ((string)(null)), table37, "And ");
+#line hidden
+#line 147
+ testRunner.And("the POST http request to \'api/pricelist\' for PriceList", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 148
+ testRunner.When("perfom the GET http request to \'api/pricelist\' for PriceList", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 149
+ testRunner.Then("I should recieve 1 json nodes for PriceList", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Date",
+                            "RoomTypeId",
+                            "Price"});
+                table38.AddRow(new string[] {
+                            "2022-12-27T00:00:00",
+                            "{RoomTypeId1}",
+                            "10.0"});
+#line 150
+ testRunner.And("response nodes should be equal to PriceList", ((string)(null)), table38, "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
