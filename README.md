@@ -51,4 +51,23 @@ differente da quello di api
 * Adottare il pattern MediatR per la segregazione del codice
 * Il db da adottare è SqlServer 2022 (anche dockerizziata)
 * Addizionale: Distribuire il tutto come Docker Compose
-(minimo richiesto WebApi e Database
+(minimo richiesto WebApi e Database)
+
+# Requisiti per eseguire il progetto API in locale
+
+1. SQL Server installato sulla propria macchina o Docker equivalente
+2. Impostare negli [User Secrets](https://learn.microsoft.com/it-it/aspnet/core/security/app-secrets?view=aspnetcore-7.0&tabs=windows) del progetto *FoxBeTestA.Api* la connection string relativa in questo formato:
+```
+{
+"ConnectionStrings": {
+  "DefaultConnection": "Server={myServerAddress};Database={myDataBase};User Id={myUsername};Password={myPassword};"
+}
+```
+3. Installare l'estensione [SpecFlow](https://specflow.org/) di Visual Studio per eseguire gli Integration Tests 
+
+Una volta eseguiti questi 3 passaggi, eseguire il progetto *FoxBeTestA.Api* in ambiente Development (Debug) o eseguire almeno uno degli Integration test del progetto *FoxBeTestA.Integration.Tests* per la creazione del Database. 
+
+
+
+
+
