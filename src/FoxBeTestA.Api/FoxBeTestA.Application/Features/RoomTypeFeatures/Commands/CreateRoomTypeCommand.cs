@@ -1,0 +1,31 @@
+﻿using AutoMapper;
+using FoxBeTestA.Application.Interfaces;
+using FoxBeTestA.DAL.Models;
+using MediatR;
+
+namespace FoxBeTestA.Application.Features.RoomTypeFeatures.Commands
+{
+    public class CreateRoomTypeCommand : IRequest<int>
+    {
+        public string Description { get; set; }
+        public int AccomodationId { get; set; }
+
+        public class CreateRoomTypeCommandHandler : IRequestHandler<CreateRoomTypeCommand, int>
+        {
+            private readonly IGenericProcessor<RoomType, RoomType, int> _roomTypeProcessor;
+            private readonly IMapper _mapper;
+
+            public CreateRoomTypeCommandHandler(IGenericProcessor<RoomType, RoomType, int> roomTypeProcessor)
+            {
+                _roomTypeProcessor = roomTypeProcessor;
+            }
+            public async Task<int> Handle(CreateRoomTypeCommand command, CancellationToken cancellationToken)
+            {
+                var roomType = _mapper.Map<RoomType>(command);
+                var entity= await _roomTypeProcessor.ExecuteInsert(roomType);
+
+                return entity.Id;
+            }
+        }
+    }
+}

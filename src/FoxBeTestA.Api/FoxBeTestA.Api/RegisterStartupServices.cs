@@ -56,11 +56,13 @@ public static class RegisterStartupServices
     private static void AddProcessors(WebApplicationBuilder builder)
     {
         builder.Services.AddTransient<IGenericProcessor<Accomodation, AccomodationDto, int>, AccomodationProcessor>();
+        builder.Services.AddTransient<IGenericProcessor<RoomType, RoomType, int>, RoomTypeProcessor>();
     }
 
     private static void AddRepositories(WebApplicationBuilder builder)
     {
         builder.Services.AddTransient<IGenericRepository<Accomodation, int>, AccomodationRepository>();
+        builder.Services.AddTransient<IGenericRepository<RoomType, int>, RoomTypeRepository>();
     }
 }
 

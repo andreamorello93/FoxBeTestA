@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FoxBeTestA.Application.DTOs;
+﻿using FoxBeTestA.Application.DTOs;
 using FoxBeTestA.Application.Interfaces;
-using FoxBeTestA.DAL.Data;
 using FoxBeTestA.DAL.Models;
 using MediatR;
 
-namespace FoxBeTestA.Application.Features.AccomodationFeatures.Commands
+namespace FoxBeTestA.Application.Features.AccomodationFeatures.Queries
 {
     public class GetAllAccomodationsQuery : IRequest<IEnumerable<AccomodationDto>>
     {
