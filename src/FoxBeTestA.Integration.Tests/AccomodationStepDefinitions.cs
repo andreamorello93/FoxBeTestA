@@ -66,11 +66,11 @@ namespace FoxBeTestA.Integration.Tests
             await _stepDefinitionHelper.SendPutRequest(_foxBeTestAApiHelper.Client, p0.Replace("{id}", _insertedId.ToString()), new StringContent(_entity.ToString(), Encoding.UTF8, MediaTypeNames.Application.Json));
         }
 
-        [Then(@"first json node should be equal to")]
+        [Then(@"json node should be equal to")]
         public void ThenFirstJsonNodeShouldBeEqualTo(Table table)
         {
             _entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, false);
-            _stepDefinitionHelper.RemoveJTokenValue(_stepDefinitionHelper.ApiResponse, "[*].id");
+            _stepDefinitionHelper.RemoveJTokenValues(_stepDefinitionHelper.ApiResponse, "[*].id");
             _stepDefinitionHelper.ApiResponse.Should().BeEquivalentTo(_entity);
         }
 

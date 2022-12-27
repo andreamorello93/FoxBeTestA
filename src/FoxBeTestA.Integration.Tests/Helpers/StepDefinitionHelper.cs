@@ -77,12 +77,29 @@ namespace FoxBeTestA.Integration.Tests.Helpers
             return true;
         }
 
+        public bool RemoveJTokenValues(JToken token, string path)
+        {
+            var tokensToRemove = SelectTokens(token, path);
+
+            foreach (var tokenToRemove in tokensToRemove.Reverse())
+                tokenToRemove.Parent.Remove();
+
+            return true;
+        }
+
         public JToken? SelectToken(JToken parent, string path = "")
         {
             var token = parent.SelectToken(path);
             if (token is not JContainer) return null;
 
             return token;
+        }
+        public IEnumerable<JToken>? SelectTokens(JToken parent, string path = "")
+        {
+            var tokens = parent.SelectTokens(path);
+            if (tokens == null) return null;
+
+            return tokens;
         }
 
         private async Task<string> Delete(HttpClient client, string url)

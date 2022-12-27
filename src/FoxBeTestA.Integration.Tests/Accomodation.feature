@@ -14,6 +14,13 @@ Scenario: Get All Accomodation
 	And the POST http request to 'api/accomodation' for all entities
 	When perfom the GET http request to 'api/accomodation'
 	Then I should recieve 5 json nodes	
+	And json node should be equal to
+	| Name    |
+	| Hotel 1 |
+	| Hotel 2 |
+	| Hotel 3 |
+	| Hotel 4 |
+	| Hotel 5 |
 
 @Accomodation
 Scenario: Insert Accomodation
@@ -35,7 +42,7 @@ Scenario: Update Accomodation
 	| Hotel 5 |
 	When perfom the GET http request to 'api/accomodation'
 	Then I should recieve 1 json nodes	
-	And first json node should be equal to
+	And json node should be equal to
 	| Name    |
 	| Hotel 5 |
 

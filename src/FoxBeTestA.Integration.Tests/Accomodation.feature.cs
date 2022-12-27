@@ -116,6 +116,21 @@ this.ScenarioInitialize(scenarioInfo);
 #line 16
  testRunner.Then("I should recieve 5 json nodes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name"});
+                table2.AddRow(new string[] {
+                            "Hotel 1"});
+                table2.AddRow(new string[] {
+                            "Hotel 2"});
+                table2.AddRow(new string[] {
+                            "Hotel 3"});
+                table2.AddRow(new string[] {
+                            "Hotel 4"});
+                table2.AddRow(new string[] {
+                            "Hotel 5"});
+#line 17
+ testRunner.And("json node should be equal to", ((string)(null)), table2, "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -129,7 +144,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Accomodation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Insert Accomodation", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 19
+#line 26
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -139,20 +154,20 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name"});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "Hotel 1"});
-#line 20
- testRunner.Given("the Accomodation entity", ((string)(null)), table2, "Given ");
+#line 27
+ testRunner.Given("the Accomodation entity", ((string)(null)), table3, "Given ");
 #line hidden
-#line 23
+#line 30
  testRunner.And("the POST http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
+#line 31
  testRunner.When("perfom the GET http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 25
+#line 32
  testRunner.Then("I should recieve 1 json nodes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -168,7 +183,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Accomodation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Accomodation", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 28
+#line 35
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -178,35 +193,35 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name"});
-                table3.AddRow(new string[] {
-                            "Hotel 1"});
-#line 29
- testRunner.Given("the Accomodation entity", ((string)(null)), table3, "Given ");
-#line hidden
-#line 32
- testRunner.And("the POST http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name"});
                 table4.AddRow(new string[] {
-                            "Hotel 5"});
-#line 33
- testRunner.And("the PUT http request to \'api/accomodation/{id}\' with the new entity", ((string)(null)), table4, "And ");
-#line hidden
+                            "Hotel 1"});
 #line 36
- testRunner.When("perfom the GET http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("the Accomodation entity", ((string)(null)), table4, "Given ");
 #line hidden
-#line 37
- testRunner.Then("I should recieve 1 json nodes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 39
+ testRunner.And("the POST http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name"});
                 table5.AddRow(new string[] {
                             "Hotel 5"});
-#line 38
- testRunner.And("first json node should be equal to", ((string)(null)), table5, "And ");
+#line 40
+ testRunner.And("the PUT http request to \'api/accomodation/{id}\' with the new entity", ((string)(null)), table5, "And ");
+#line hidden
+#line 43
+ testRunner.When("perfom the GET http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 44
+ testRunner.Then("I should recieve 1 json nodes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name"});
+                table6.AddRow(new string[] {
+                            "Hotel 5"});
+#line 45
+ testRunner.And("json node should be equal to", ((string)(null)), table6, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -221,7 +236,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Accomodation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Accomodation", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 43
+#line 50
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -231,23 +246,23 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name"});
-                table6.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "Hotel 1"});
-#line 44
- testRunner.Given("the Accomodation entity", ((string)(null)), table6, "Given ");
+#line 51
+ testRunner.Given("the Accomodation entity", ((string)(null)), table7, "Given ");
 #line hidden
-#line 47
+#line 54
  testRunner.And("the POST http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 48
+#line 55
  testRunner.And("the DELETE http request to \'api/accomodation/{id}\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 49
+#line 56
  testRunner.When("perfom the GET http request to \'api/accomodation\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 50
+#line 57
  testRunner.Then("I should recieve 0 json nodes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
