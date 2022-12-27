@@ -1,6 +1,7 @@
 using System;
 using System.Net.Mime;
 using System.Text;
+using FluentAssertions.Json;
 using FoxBeTestA.Application.DTOs;
 using FoxBeTestA.Application.Features.AccomodationFeatures.Commands;
 using FoxBeTestA.DAL.Models;
@@ -16,7 +17,8 @@ namespace FoxBeTestA.Integration.Tests
     {
         private StepDefinitionHelper _stepDefinitionHelper;
         private FoxBeTestAApiHelper _foxBeTestAApiHelper;
-        private JToken entity;
+        private JToken _entity;
+        private int _insertedId;
 
         [BeforeScenario("Accomodation")]
         public async Task BeforeScenario()
@@ -34,13 +36,14 @@ namespace FoxBeTestA.Integration.Tests
         [Given(@"the Accomodation entity")]
         public void GivenTheAccomodationEntity(Table table)
         {
-            entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, true);
+            _entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, true);
         }
 
         [Given(@"the POST http request to '([^']*)'")]
         public async Task GivenThePOSTHttpRequestTo(string p0)
         {
-            await _stepDefinitionHelper.SendPostRequest(_foxBeTestAApiHelper.Client, p0, new StringContent(entity.ToString(), Encoding.UTF8, MediaTypeNames.Application.Json));
+            await _stepDefinitionHelper.SendPostRequest(_foxBeTestAApiHelper.Client, p0, new StringContent(_entity.ToString(), Encoding.UTF8, MediaTypeNames.Application.Json));
+            _insertedId = (int)_stepDefinitionHelper.ApiResponse;
         }
 
         [When(@"perfom the GET http request to '([^']*)'")]
@@ -54,5 +57,22 @@ namespace FoxBeTestA.Integration.Tests
         {
             _stepDefinitionHelper.CountApiResponseDtos(p0);
         }
+
+        [Given(@"the PUT http request to '([^']*)' with the new entity")]
+        public async Task GivenThePUTHttpRequestToWithTheNewEntity(string p0, Table table)
+        {
+            _entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, true);
+            _stepDefinitionHelper.AddJTokenValue(_entity, "id", _insertedId);
+            await _stepDefinitionHelper.SendPutRequest(_foxBeTestAApiHelper.Client, p0.Replace("{id}", _insertedId.ToString()), new StringContent(_entity.ToString(), Encoding.UTF8, MediaTypeNames.Application.Json));
+        }
+
+        [Then(@"first json node should be equal to")]
+        public void ThenFirstJsonNodeShouldBeEqualTo(Table table)
+        {
+            _entity = _stepDefinitionHelper.ToJToken<Accomodation>(table, false);
+            _stepDefinitionHelper.RemoveJTokenValue(_stepDefinitionHelper.ApiResponse, "[*].id");
+            _stepDefinitionHelper.ApiResponse.Should().BeEquivalentTo(_entity);
+        }
+
     }
 }

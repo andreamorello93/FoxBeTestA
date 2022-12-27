@@ -29,6 +29,11 @@ namespace FoxBeTestA.Integration.Tests.Helpers
             ApiResponse = JToken.Parse(await Post(client, url, content));
         }
 
+        public async Task SendPutRequest(HttpClient client, string url, HttpContent content)
+        {
+            ApiResponse = JToken.Parse(await Put(client, url, content));
+        }
+
         public async Task SendGetRequest(HttpClient client, string url)
         {
             ApiResponse = JToken.Parse(await Get(client, url));
@@ -50,24 +55,64 @@ namespace FoxBeTestA.Integration.Tests.Helpers
             }
         }
 
+        public bool AddJTokenValue(JToken token, string propertyname, object propertyValue, string path = "")
+        {
+            var parent = SelectToken(token, path);
+
+            ((JContainer)parent).Add(new JProperty(propertyname, JToken.FromObject(propertyValue)));
+            return true;
+        }
+
+        public bool RemoveJTokenValue(JToken token, string path)
+        {
+            var tokenToRemove = token.SelectToken(path);
+            if (tokenToRemove == null) return false;
+
+            tokenToRemove.Parent.Remove();
+            return true;
+        }
+
+        public JToken? SelectToken(JToken parent, string path = "")
+        {
+            var token = parent.SelectToken(path);
+            if (token is not JContainer) return null;
+
+            return token;
+        }
+
         private async Task<string> Post(HttpClient client, string url, HttpContent content)
         {
             var message = await client.PostAsync(url, content);
 
-            var response = await message.Content.ReadAsStringAsync();
+            return await ValidateAndReturnApiResponse(message);
+        }
 
-            try { message.StatusCode.Should().Be(HttpStatusCode.OK); } catch (Exception exc) { throw new Exception(response, exc); }
+        private async Task<string> Put(HttpClient client, string url, HttpContent content)
+        {
+            var message = await client.PutAsync(url, content);
 
-            return response;
+            return await ValidateAndReturnApiResponse(message);
         }
 
         private async Task<string> Get(HttpClient client, string url)
         {
             var message = await client.GetAsync(url);
 
+            return await ValidateAndReturnApiResponse(message);
+        }
+
+        private static async Task<string> ValidateAndReturnApiResponse(HttpResponseMessage message)
+        {
             var response = await message.Content.ReadAsStringAsync();
 
-            try { message.StatusCode.Should().Be(HttpStatusCode.OK); } catch (Exception exc) { throw new Exception(response, exc); }
+            try
+            {
+                message.StatusCode.Should().Be(HttpStatusCode.OK);
+            }
+            catch (Exception exc)
+            {
+                throw new Exception(response, exc);
+            }
 
             return response;
         }
