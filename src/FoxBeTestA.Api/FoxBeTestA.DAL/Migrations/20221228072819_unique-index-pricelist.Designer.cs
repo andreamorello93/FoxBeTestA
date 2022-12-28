@@ -4,6 +4,7 @@ using FoxBeTestA.DAL.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoxBeTestA.DAL.Migrations
 {
     [DbContext(typeof(FoxBeTestAContext))]
-    partial class FoxBeTestAContextModelSnapshot : ModelSnapshot
+    [Migration("20221228072819_unique-index-pricelist")]
+    partial class uniqueindexpricelist
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +43,7 @@ namespace FoxBeTestA.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Accomodations", (string)null);
+                    b.ToTable("Accomodations");
                 });
 
             modelBuilder.Entity("FoxBeTestA.DAL.Models.PriceList", b =>
@@ -66,7 +68,7 @@ namespace FoxBeTestA.DAL.Migrations
                     b.HasIndex(new[] { "RoomTypeId", "Date" }, "IX_RoomTypeIdAndDate_Unique")
                         .IsUnique();
 
-                    b.ToTable("PriceList", (string)null);
+                    b.ToTable("PriceList");
                 });
 
             modelBuilder.Entity("FoxBeTestA.DAL.Models.RoomType", b =>
@@ -96,7 +98,7 @@ namespace FoxBeTestA.DAL.Migrations
                     b.HasIndex(new[] { "Description", "AccomodationId" }, "IX_DescriptionAndAccomodationId_Unique")
                         .IsUnique();
 
-                    b.ToTable("RoomTypes", (string)null);
+                    b.ToTable("RoomTypes");
                 });
 
             modelBuilder.Entity("FoxBeTestA.DAL.Models.PriceList", b =>
