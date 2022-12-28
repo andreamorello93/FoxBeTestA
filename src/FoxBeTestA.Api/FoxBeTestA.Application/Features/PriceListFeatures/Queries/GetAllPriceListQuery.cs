@@ -1,4 +1,5 @@
 ﻿using FoxBeTestA.Application.Interfaces;
+using FoxBeTestA.Application.Processors;
 using FoxBeTestA.DAL.Models;
 using MediatR;
 
@@ -8,9 +9,9 @@ namespace FoxBeTestA.Application.Features.PriceListFeatures.Queries
     {
         public class GetAllPriceListsQueryHandler : IRequestHandler<GetAllPriceListsQuery, IEnumerable<PriceListDto>>
         {
-            private readonly IGenericProcessor<PriceList, PriceListDto, int> _PriceListProcessor;
+            private readonly IPriceListProcessor _PriceListProcessor;
 
-            public GetAllPriceListsQueryHandler(IGenericProcessor<PriceList, PriceListDto, int> PriceListProcessor)
+            public GetAllPriceListsQueryHandler(IPriceListProcessor PriceListProcessor)
             {
                 _PriceListProcessor = PriceListProcessor;
             }

@@ -57,7 +57,7 @@ public static class RegisterStartupServices
     {
         builder.Services.AddTransient<IGenericProcessor<Accomodation, AccomodationDto, int>, AccomodationProcessor>();
         builder.Services.AddTransient<IRoomTypeProcessor, RoomTypeProcessor>();
-        builder.Services.AddTransient<IGenericProcessor<PriceList, PriceListDto, int>, PriceListProcessor>();
+        builder.Services.AddTransient<IPriceListProcessor, PriceListProcessor>();
     }
 
     private static void AddRepositories(WebApplicationBuilder builder)

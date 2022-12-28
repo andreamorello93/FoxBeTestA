@@ -5,7 +5,12 @@ using FoxBeTestA.DAL.Models;
 
 namespace FoxBeTestA.Application.Processors
 {
-    public class PriceListProcessor : GenericProcessor<PriceList, PriceListDto, int>
+    public interface IPriceListProcessor : IGenericProcessor<PriceList, PriceListDto, int>
+    {
+        Task<PriceListDto> ExecuteInsertToDto(decimal? Price, PriceList entity);
+    }
+
+    public class PriceListProcessor : GenericProcessor<PriceList, PriceListDto, int>, IPriceListProcessor
     {
         private readonly IRoomTypeProcessor _roomtypeProcessor;
 
@@ -14,9 +19,9 @@ namespace FoxBeTestA.Application.Processors
             _roomtypeProcessor = roomtypeProcessor;
         }
 
-        public override async Task<PriceListDto> ExecuteInsertToDto(PriceList entity)
+        public async Task<PriceListDto> ExecuteInsertToDto(decimal? Price, PriceList entity)
         {
-            if (entity.Price.Equals(0))
+            if (Price == null)
                 await CalculatePriceByBaseRoomPrice(entity);
 
             return await base.ExecuteInsertToDto(entity);

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FoxBeTestA.Application.Interfaces;
+using FoxBeTestA.Application.Processors;
 using FoxBeTestA.DAL.Models;
 using MediatR;
 
@@ -13,17 +14,17 @@ namespace FoxBeTestA.Application.Features.PriceListFeatures.Commands
 
         public class CreatePriceListCommandHandler : IRequestHandler<CreatePriceListCommand, int>
         {
-            private readonly IGenericProcessor<PriceList, PriceListDto, int> _PriceListProcessor;
+            private readonly IPriceListProcessor _PriceListProcessor;
             private readonly IMapper _mapper;
 
-            public CreatePriceListCommandHandler(IGenericProcessor<PriceList, PriceListDto, int> PriceListProcessor, IMapper mapper)
+            public CreatePriceListCommandHandler(IPriceListProcessor PriceListProcessor, IMapper mapper)
             {
                 _PriceListProcessor = PriceListProcessor;
                 _mapper = mapper;
             }
             public async Task<int> Handle(CreatePriceListCommand command, CancellationToken cancellationToken)
             {
-                var entity= await _PriceListProcessor.ExecuteInsertToDto(_mapper.Map<PriceList>(command));
+                var entity= await _PriceListProcessor.ExecuteInsertToDto(command.Price, _mapper.Map<PriceList>(command));
 
                 return entity.Id;
             }
