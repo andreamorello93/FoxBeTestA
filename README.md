@@ -67,7 +67,9 @@ differente da quello di api
 
 Una volta eseguiti questi 3 passaggi, eseguire il progetto *FoxBeTestA.Api* in ambiente Development (Debug) o eseguire almeno uno degli Integration test del progetto *FoxBeTestA.Integration.Tests* per la creazione del Database. 
 
+# Sviluppo della funzionalità
 
+Come riscontrabile dagli integration tests, se durante l'inserimento dell'entità PriceList la proprietà *Price* non viene specificata, viene eseguito il calcolo sulla base del *BaseRoomPrice* per Accomodation, unito alla percentuale di *ExtraPercentageFromBasePrice* su RoomType.
 
 
 
