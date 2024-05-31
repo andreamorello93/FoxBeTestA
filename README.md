@@ -41,17 +41,17 @@ Mssql
 Docker
 
 Requirement Tecnico:
-* Il framework da usare è .net 6
-* La web api può essere di tipo minimal api
-* Si realizzi l’interfaccia api come CRUD
-* Il layer di accesso db, entità e repository deve risiedere in un progetto
-differente da quello di api
-* Adottare la metodologia EF Code first per la generazione del modello db
-* Applicare almeno due migrazioni al modello db
-* Adottare il pattern MediatR per la segregazione del codice
-* Il db da adottare è SqlServer 2022 (anche dockerizziata)
-* Addizionale: Distribuire il tutto come Docker Compose
-(minimo richiesto WebApi e Database)
+* Il framework da usare è .net 6 ✔️
+* La web api può essere di tipo minimal api ✔️
+* Si realizzi l’interfaccia api come CRUD ✔️
+* Il layer di accesso db, entità e repository deve risiedere in un progetto 
+differente da quello di api ✔️
+* Adottare la metodologia EF Code first per la generazione del modello db ✔️
+* Applicare almeno due migrazioni al modello db ✔️
+* Adottare il pattern MediatR per la segregazione del codice ✔️
+* Il db da adottare è SqlServer 2022 (anche dockerizziata) ✔️
+* Addizionale: Distribuire il tutto come Docker Compose 
+(minimo richiesto WebApi e Database) ✔️
 
 # Requisiti per eseguire il progetto API in locale
 
